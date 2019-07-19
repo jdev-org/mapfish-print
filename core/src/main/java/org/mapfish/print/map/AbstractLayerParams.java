@@ -21,7 +21,7 @@ public class AbstractLayerParams {
      * Fail if a tile return an error.
      */
     @HasDefaultValue
-    public boolean failOnError = false;
+    public boolean failOnError = true;
 
     /**
      * Constructor.
