@@ -49,7 +49,7 @@
         <!-- Timeout for print jobs in seconds -->
         <property name="timeout" value="${printTimeout}" />
         <!-- Timeout after which a print job is canceled, if the status has not been checked (in seconds). -->
-        <property name="abandonedTimeout" value="120" />
+        <property name="abandonedTimeout" value="${abandonedTimeout}" />
         <property name="oldFileCleanUp" value="${fileCleanUp}" />
         <property name="oldFileCleanupInterval" value="${fileCleanUpInterval}" />
     </bean>
