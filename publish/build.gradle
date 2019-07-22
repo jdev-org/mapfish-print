@@ -39,7 +39,7 @@ if (Boolean.parseBoolean(enablePublishing)) {
                 setPom(pom)
                 pom {
                     name = 'print-cli'
-                    packaging = 'zip'
+                    packaging = 'pom'
                     description = 'Application for generating PDFs and images from online webmapping services. All dependencies are included'
                 }
             }
@@ -47,7 +47,7 @@ if (Boolean.parseBoolean(enablePublishing)) {
 
         repositories {
             maven {
-                url "https://$host/service/local/staging/deploy/maven2"
+                url = host
                 credentials {
                     username = sonatypeUsername
                     password = sonatypePassword
@@ -56,14 +56,8 @@ if (Boolean.parseBoolean(enablePublishing)) {
         }
     }
 
-    signing {
-        sign publishing.publications.lib
-        sign publishing.publications.servlet
-        sign publishing.publications.standalone
-    }
-
     nexusPublishing {
-        serverUrl = uri("https://$host/service/local/")
+        serverUrl = uri(host)
     }
 }
 
